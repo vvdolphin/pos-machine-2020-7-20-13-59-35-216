@@ -2,7 +2,7 @@ function printReceipt(barcodes) {
 
     let barcodeCount = itemsCount(barcodes);
     let itemInfo = getItemInfo(barcodeCount);
-    let itemDetail = getItemDetail(itemInfo);
+    let itemDetail = getSingleReceipt(itemInfo);
     printInfo(itemDetail);
 
 }
@@ -39,13 +39,6 @@ function getItemInfo(barcodeCount){
     return itemArray;
 }
 
-function getItemDetail(itemInfo){
-    for(index = 0; index < itemInfo.length; index++){
-        let itemKey=itemInfo[index];
-        itemKey.total=itemKey.num*itemKey.price;
-    }
-    return itemInfo;
-}
 
 function getSingleReceipt(itemDetail){
     let lineData=new Array();
